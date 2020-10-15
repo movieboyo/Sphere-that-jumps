@@ -67,9 +67,10 @@ public class playercontroller2D : MonoBehaviour
         animator.Play("player_idle");
         rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
-            if(Input.GetKey("space") && isGrounded)
+        
+        if(Input.GetKey("space"))
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, jumpspeed); 
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 3);
         }
     }
 

@@ -4,15 +4,9 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
-    second: player_idle1
-  - first:
-      213: 21300002
-    second: player_idle2
-  - first:
-      213: 21300004
     second: spritesheet_0
   - first:
-      213: 21300006
+      213: 21300002
     second: spritesheet_1
   externalObjects: {}
   serializedVersion: 11
@@ -126,7 +120,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 7542c3b165db5244fa23b85b47376e1b
-      internalID: 21300004
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -147,7 +141,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 727c91e902fceff4db860fdc0943906f
-      internalID: 21300006
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []

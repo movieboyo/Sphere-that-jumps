@@ -44,27 +44,34 @@ public class playercontroller2D : MonoBehaviour
 
         if(Input.GetKey("d") || Input.GetKey("right"))
         { 
-            rb2d.velocity = new Vector2(2, rb2d.velocity.y);
-            animator.Play("player_run");
+            rb2d.velocity = new Vector2(3, rb2d.velocity.y);
+            
+            if(isGrounded)
+                animator.Play("player_run");
             spriteRenderer.flipX = false;
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {   
-            rb2d.velocity = new Vector2(-2, rb2d.velocity.y);
-            animator.Play("player_run");
+            rb2d.velocity = new Vector2(-3, rb2d.velocity.y);
+            
+            if(isGrounded)
+                animator.Play("player_run");
             spriteRenderer.flipX = true;
         }
-        else 
+        else
         {
-        animator.Play("player_idle");
-        rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+                if(isGrounded)
+            animator.Play("player_idle");
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
         
         if(Input.GetKey("space") && isGrounded)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 3);
+                if(isGrounded)
             animator.Play("player_jump");
         }
+        
         
     }
 

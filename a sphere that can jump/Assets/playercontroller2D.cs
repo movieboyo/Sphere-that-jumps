@@ -63,7 +63,9 @@ public class playercontroller2D : MonoBehaviour
         if(Input.GetKey("space") && isGrounded)
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 3);
+            animator.Play("player_jump");
         }
+        
     }
 
     

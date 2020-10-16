@@ -15,8 +15,8 @@ public class playercontroller2D : MonoBehaviour
         [SerializeField]
         Transform groundCheck;
 
-       float myNum = 3.5F;
-       //float myNum2 = 123F;
+       float myNum = 4F, myNum2 = 123F;
+       
 
 
     void Start()
@@ -67,7 +67,7 @@ public class playercontroller2D : MonoBehaviour
         
         if(Input.GetKey("space") && isGrounded)
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, 5);
+            rb2d.velocity = new Vector2(rb2d.velocity.x, myNum2);
                 if(isGrounded)
             animator.Play("player_jump");
         }

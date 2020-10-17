@@ -15,7 +15,7 @@ public class playercontroller2D : MonoBehaviour
         [SerializeField]
         Transform groundCheck;
 
-       float myNum = 4F, myNum2 = 123F;
+       float myNum = 4F, myNum2 = 4F;
        
 
 
@@ -49,6 +49,7 @@ public class playercontroller2D : MonoBehaviour
             if(isGrounded)
                 animator.Play("player_run");
             spriteRenderer.flipX = false;
+                
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {   

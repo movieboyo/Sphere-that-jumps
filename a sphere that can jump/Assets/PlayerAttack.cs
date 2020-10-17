@@ -4,43 +4,39 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private float timeBtwAttack;
-    public float startTimeBtwAttack;
+    public float attackTime;
+    public float startTimeAttack;
 
-    public transfrom attackPos;
-    public LayerMask whatIsEnemies;
+    public Transform attackLocation;
     public float attackRange;
+    public LayerMask enemies;
 
-    
-
-
+   
     void Update()
     {
-        if(timeBtwAttack <= 0 )
+        if( attackTime <= 0 )
         {
-            if(Input.GetKey(MouseButton.left))
+            if( Input.GetButton("Fire1"))
             {
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for(i = 0; i < enimiesToDamage.Lenght; i++)
+              
+                Collider2D[] damage = Physics2D.OverlapCircleAll( attackLocation.position, attackRange, enemies );
+
+                for (int i = 0; i < damage.Length; i++)
                 {
-                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
+                    Destroy( damage[i].gameObject );
                 }
             }
-                    startTimeBtwAttack = 0.3;
-                    timeBtwAttack = startTimeBtwAttack;
-    
-            else
-            {
-                timeBtwAttack -= Time.deltaTime;
-            }
-        }
-
-        void OnDrawGizmoSelected()
+            attackTime = startTimeAttack;
+        }   else
         {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(attackPos.position, attackRange);
+            attackTime -= Time.deltaTime;
+    z
         }
+    }
 
-        
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackLocation.position, attackRange);
     }
 }

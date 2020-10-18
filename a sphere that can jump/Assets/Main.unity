@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -420,8 +420,7 @@ GameObject:
   - component: {fileID: 355108447}
   - component: {fileID: 355108446}
   - component: {fileID: 355108450}
-  - component: {fileID: 355108449}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: enemy_idle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,18 +511,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &355108449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 355108445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261abe8a6e3061a4fa18189dd3722b37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &355108450
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -722,7 +709,7 @@ GameObject:
   - component: {fileID: 619470601}
   - component: {fileID: 619470600}
   - component: {fileID: 619470599}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy_Idle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,6 +903,7 @@ Transform:
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 1361992695}
+  - {fileID: 1961325932}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -991,6 +979,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71dfa80b0bae8354a98e08a1a5a8dabe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackTime: 0
+  startTimeAttack: 0.3
+  attackLocation: {fileID: 1961325932}
+  attackRange: 0.19
+  Enemy:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!1 &872880212
 GameObject:
   m_ObjectHideFlags: 3
@@ -1289,4 +1284,34 @@ Transform:
   - {fileID: 872880213}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1961325931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1961325932}
+  m_Layer: 0
+  m_Name: AttackLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1961325932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961325931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 865313801}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

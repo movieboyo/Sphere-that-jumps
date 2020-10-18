@@ -9,28 +9,29 @@ public class PlayerAttack : MonoBehaviour
 
     public Transform attackLocation;
     public float attackRange;
-    public LayerMask enemies;
+    public LayerMask Enemy;
 
    
     void Update()
     {
-        if( attackTime <= 0 )
+        if( attackTime <= 0 && Input.GetKey(KeyCode.Mouse0))
         {
-            if( Input.GetButton("Fire1"))
-            {
+            
               
-                Collider2D[] damage = Physics2D.OverlapCircleAll( attackLocation.position, attackRange, enemies );
+                Collider2D[] damage = Physics2D.OverlapCircleAll( attackLocation.position, attackRange, Enemy );
 
                 for (int i = 0; i < damage.Length; i++)
                 {
                     Destroy( damage[i].gameObject );
                 }
-            }
+            
             attackTime = startTimeAttack;
-        }   else
+            
+        }  
+        
+         else
         {
             attackTime -= Time.deltaTime;
-    z
         }
     }
 
